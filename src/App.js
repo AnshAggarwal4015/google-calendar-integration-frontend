@@ -31,7 +31,7 @@ function App() {
     event.preventDefault();
     const { name, email, title, startDatetime, endDatetime } = formData;
     axios
-      .post("http://localhost:8000/create-event", {
+      .post("https://calendar-integrator.onrender.com/create-event", {
         name,
         email,
         title,
@@ -46,7 +46,6 @@ function App() {
       .catch((error) => {
         console.error(error);
       });
-
   };
   const handleChange = (e) => {
     setFormData({
@@ -56,7 +55,9 @@ function App() {
   };
   const handleClick = () => {
     axios
-      .get("http://localhost:8000/generate-authorization-url")
+      .get(
+        "https://calendar-integrator.onrender.com/generate-authorization-url"
+      )
       .then((response) => {
         console.log(response.data);
         const { url } = response.data;
