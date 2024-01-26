@@ -1,4 +1,3 @@
-/* Overall Application Layout */
 .App {
   display: flex;
   justify-content: center;
@@ -7,7 +6,6 @@
   background-color: #f0f0f0;
 }
 
-/* Form Styling */
 form {
   background: white;
   padding: 40px;
@@ -21,7 +19,6 @@ form div {
   margin-bottom: 20px;
 }
 
-/* Label Styling */
 label {
   display: block;
   margin-bottom: 8px;
@@ -30,7 +27,6 @@ label {
   font-size: 1.1em;
 }
 
-/* Input Field Styling */
 input[type="text"],
 input[type="datetime-local"],
 input[type="email"] {
@@ -50,7 +46,6 @@ input[type="email"]:focus {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-/* Button Styling */
 button {
   background-color: #007bff;
   color: white;
@@ -67,7 +62,6 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Media Query for Responsive Design */
 @media (max-width: 600px) {
   form {
     width: 80%;

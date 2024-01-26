@@ -5,6 +5,7 @@ import axios from "axios";
 function App() {
   const queryParameters = new URLSearchParams(window.location.search);
   const refreshToken = queryParameters.get("refreshToken");
+  const BASE_URL = process.env.REACT_APP_BASE_URL;
   useEffect(() => {
     if (refreshToken) {
       setLoggedIn(true);
@@ -31,7 +32,7 @@ function App() {
     event.preventDefault();
     const { name, email, title, startDatetime, endDatetime } = formData;
     axios
-      .post("https://calendar-integrator.onrender.com/create-event", {
+      .post(`${BASE_URL}/create-event`, {
         name,
         email,
         title,
@@ -55,9 +56,7 @@ function App() {
   };
   const handleClick = () => {
     axios
-      .get(
-        "https://calendar-integrator.onrender.com/generate-authorization-url"
-      )
+      .get(`${BASE_URL}/generate-authorization-url`)
       .then((response) => {
         console.log(response.data);
         const { url } = response.data;
